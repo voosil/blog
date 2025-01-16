@@ -1,0 +1,16 @@
+{
+  "name": "@repo/commitlint-config",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "commitlint.config.ts",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0"
+  },
+  "dependencies": {
+    "@commitlint/types": "^19.0.3",
+    "@types/lodash-es": "^4.17.12",
+    "glob": "^10.3.12",
+    "lodash-es": "^4.17.21",
+    "yaml": "^2.4.2"
+  }
+}

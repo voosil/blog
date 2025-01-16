@@ -12,4 +12,5 @@ export default defineConfig({
     checkOrigin: false,
   },
   site: 'https://voosil.github.io',
+  base: '/blog',
 });

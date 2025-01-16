@@ -1,0 +1,5 @@
+{
+  "ignorePatterns": ["apps/server/**", ".lintstagedrc.js"],
+  "extends": ["@repo/eslint-config/library.js", "@repo/eslint-config/base.js"],
+  "parser": "@typescript-eslint/parser"
+}

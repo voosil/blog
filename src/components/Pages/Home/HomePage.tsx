@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { format } from 'date-fns';
 
-import { cn } from '@repo/utils/lib';
-
-import { getRandomHue } from '@/utils';
+import { cn, getRandomHue, url } from '@/utils';
 
 import { Header } from './Nav';
 
@@ -48,7 +46,7 @@ export function HomePage({ posts }: HomePageProps) {
       <div className='w-full h-full flex justify-center items-center'>
         <img
           className='fixed w-[90%] h-[90%] rounded-2xl shadow-xl'
-          src='/images/tuya.png'
+          src={url('/images/tuya.png')}
         />
       </div>
       <div className='w-full h-full relative z-99 p-[5%] bg-gradient-to-br from-[var(--maskBgColor1)] from-0% via-[var(--maskBgColor2)] via-50% to-[var(--maskBgColor3)] to-100%'>
@@ -70,7 +68,8 @@ export function HomePage({ posts }: HomePageProps) {
                   return (
                     <a
                       className='flex justify-between w-full px-1 py-px text-zinc-200 hover:bg-[var(--maskBgColor3)] transition-colors ease duration-300'
-                      href={`/post/${id}`}
+                      href={url(`/post/${id}`)}
+                      key={id}
                     >
                       <span>{data.title}</span>
                       <span>{format(data.date, 'eeee MM-dd')}</span>
@@ -81,12 +80,12 @@ export function HomePage({ posts }: HomePageProps) {
               <div className='flex gap-6 p-2'>
                 <div className='w-6'>
                   <a href='https://github.com/voosil'>
-                    <img src='/icons/github.svg' alt='github' />
+                    <img src={url('/icons/github.svg')} alt='github' />
                   </a>
                 </div>
                 <div className='w-6'>
                   <a href='https://space.bilibili.com/8497020'>
-                    <img src='/icons/bilibili.svg' alt='bilibili' />
+                    <img src={url('/icons/bilibili.svg')} alt='bilibili' />
                   </a>
                 </div>
               </div>
@@ -98,7 +97,10 @@ export function HomePage({ posts }: HomePageProps) {
                     <div className='space-y-2'>
                       {targetPosts.map(
                         ({ id, data: { title, date } }, index) => {
-                          const randomColor = `${Math.min(360, randomHue + index * 20)},70%,90%`;
+                          const randomColor = `${Math.min(
+                            360,
+                            randomHue + index * 20,
+                          )},70%,90%`;
 
                           return (
                             <a
@@ -109,7 +111,7 @@ export function HomePage({ posts }: HomePageProps) {
                                 animationDelay: `${Math.random() * 1.5}s`,
                               }}
                               key={id}
-                              href={`/post/${id}`}
+                              href={url(`/post/${id}`)}
                             >
                               <span>{new Date(date).toLocaleDateString()}</span>
                               <span>{title}</span>

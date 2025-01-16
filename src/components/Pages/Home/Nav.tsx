@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { cn } from '@repo/utils/lib';
+import { cn } from '@/utils';
 
 export const nav = [
   { name: '生活记录', path: 'life-log' },
@@ -30,6 +30,7 @@ export function Header({ onNavigate }: HeaderProps) {
               path === navPath ? 'bg-zinc-900 bg-opacity-80' : '',
             )}
             onClick={() => handleRoute(navPath)}
+            key={navPath}
           >
             {name}
           </div>

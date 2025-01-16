@@ -1,5 +1,4 @@
-import { cn } from '@repo/utils/lib';
-
+import { cn } from '@/utils';
 import type { MetadataHeading } from '@/types/astro';
 
 /**

@@ -4,7 +4,7 @@ import Layout from '@/layouts/Layout.astro';
 import { MarkdownMenu } from '@/components/Pages/Reader/MarkdownMenu';
 import { AutoSizeTitle } from '@/components/UI/AutoSizeTitle';
 import { MarkdownReader } from '@/components/Pages/Reader/MarkdownReader';
-import { cn } from '@repo/utils/lib';
+import { cn, url } from '@/utils';
 
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -52,7 +52,7 @@ const { headings } = await render(post);
       {
         data.banner && (
           <header class='relative'>
-            <img src={data.banner} alt='banner' class='w-full relative' />
+            <img src={url(data.banner)} alt='banner' class='w-full relative' />
             <div class='mt-0 space-y-2 absolute top-1/2'>
               <div class='text-[1rem] text-white float-right'>
                 {format(data.date, 'eeee MM-dd hh:mm, yyyy')}
@@ -70,9 +70,9 @@ const { headings } = await render(post);
     </main>
 
     <nav>
-      <a href='/' class='flex items-center fixed right-16 mt-16'>
+      <a href={url('/')} class='flex items-center fixed right-16 mt-16'>
         Back to Home
-        <img src='/icons/r-arrow.svg' class='w-4 inline-block' />
+        <img src={url('/icons/r-arrow.svg')} class='w-4 inline-block' />
       </a>
     </nav>
   </div>

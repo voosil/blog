@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { cn } from '@repo/utils/lib';
+import { cn } from '@/utils';
 
 /**
  * 有编号的侧边栏笔记和代码块

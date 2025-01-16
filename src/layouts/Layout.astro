@@ -1,5 +1,5 @@
 ---
-import { getRandomHue } from '@/utils';
+import { getRandomHue, url } from '@/utils';
 import ClientRouter from 'astro/components/ClientRouter.astro';
 
 import '@/styles/global.css';
@@ -15,7 +15,7 @@ const maskBgColor3 = `hsl(${getRandomHue({ min: 180, max: 360 })},69%,60%,.75)`;
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='icon' type='image/svg+xml' href={url('/favicon.svg')} />
     <meta name='generator' content={Astro.generator} />
     <title>Voosil‘s Blog</title>
     <ClientRouter />
