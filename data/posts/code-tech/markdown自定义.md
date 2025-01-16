@@ -1,8 +1,10 @@
 ---
-title: 'Markdown 自定义'
+title: 'Blog coding log'
 date: '2025-01-13 21:01'
 # banner: /images/tuya-3.png
 ---
+
+# Markdown 自定义
 
 ## Usage
 
@@ -95,157 +97,160 @@ markdown => remark-parse => mdast => remark-directive+remark-directive-rehype =>
 1. preact 不支持Server Component，涉及到有异步请求的组件，需要使用react，或者选择将整个Reader作为客户端组件；
 2. Astro 配置 rehype-react 不生效（原因未知，在rehype-react中log未执行），最后选择手动实现，成本并不高。
 
-## Learned
+# Learned
 
-### 1. React Render "Hast to Component"
+## 1. Rehpye-React "Hast to Component"
 
 在实现side note组件时遇到一个问题：
 在hast中只有一对p节点：
 
 ```js
 const hast = {
-  "type": "root",
-  "children": [
+  type: 'root',
+  children: [
     {
-      "type": "element",
-      "tagName": "p",
-      "properties": {},
-      "children": [
+      type: 'element',
+      tagName: 'p',
+      properties: {},
+      children: [
         {
-          "type": "text",
-          "value": "there is a ",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
+          type: 'text',
+          value: 'there is a ',
+          position: {
+            start: {
+              line: 1,
+              column: 1,
+              offset: 0,
             },
-            "end": {
-              "line": 1,
-              "column": 12,
-              "offset": 11
-            }
-          }
+            end: {
+              line: 1,
+              column: 12,
+              offset: 11,
+            },
+          },
         },
         {
-          "type": "element",
-          "tagName": "strong",
-          "properties": {},
-          "children": [
+          type: 'element',
+          tagName: 'strong',
+          properties: {},
+          children: [
             {
-              "type": "text",
-              "value": "side note",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 14,
-                  "offset": 13
+              type: 'text',
+              value: 'side note',
+              position: {
+                start: {
+                  line: 1,
+                  column: 14,
+                  offset: 13,
                 },
-                "end": {
-                  "line": 1,
-                  "column": 23,
-                  "offset": 22
-                }
-              }
-            }
+                end: {
+                  line: 1,
+                  column: 23,
+                  offset: 22,
+                },
+              },
+            },
           ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 12,
-              "offset": 11
+          position: {
+            start: {
+              line: 1,
+              column: 12,
+              offset: 11,
             },
-            "end": {
-              "line": 1,
-              "column": 25,
-              "offset": 24
-            }
-          }
+            end: {
+              line: 1,
+              column: 25,
+              offset: 24,
+            },
+          },
         },
         {
-          "type": "text",
-          "value": " 👉 ",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 25,
-              "offset": 24
+          type: 'text',
+          value: ' 👉 ',
+          position: {
+            start: {
+              line: 1,
+              column: 25,
+              offset: 24,
             },
-            "end": {
-              "line": 1,
-              "column": 29,
-              "offset": 28
-            }
-          }
+            end: {
+              line: 1,
+              column: 29,
+              offset: 28,
+            },
+          },
         },
         {
-          "type": "element",
-          "tagName": "sn",
-          "properties": {},
-          "children": [],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 29,
-              "offset": 28
+          type: 'element',
+          tagName: 'sn',
+          properties: {},
+          children: [],
+          position: {
+            start: {
+              line: 1,
+              column: 29,
+              offset: 28,
             },
-            "end": {
-              "line": 1,
-              "column": 32,
-              "offset": 31
-            }
-          }
+            end: {
+              line: 1,
+              column: 32,
+              offset: 31,
+            },
+          },
         },
         {
-          "type": "text",
-          "value": " fff",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 32,
-              "offset": 31
+          type: 'text',
+          value: ' fff',
+          position: {
+            start: {
+              line: 1,
+              column: 32,
+              offset: 31,
             },
-            "end": {
-              "line": 1,
-              "column": 36,
-              "offset": 35
-            }
-          }
-        }
+            end: {
+              line: 1,
+              column: 36,
+              offset: 35,
+            },
+          },
+        },
       ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
+      position: {
+        start: {
+          line: 1,
+          column: 1,
+          offset: 0,
         },
-        "end": {
-          "line": 1,
-          "column": 36,
-          "offset": 35
-        }
-      }
-    }
-  ],
-  "position": {
-    "start": {
-      "line": 1,
-      "column": 1,
-      "offset": 0
+        end: {
+          line: 1,
+          column: 36,
+          offset: 35,
+        },
+      },
     },
-    "end": {
-      "line": 1,
-      "column": 36,
-      "offset": 35
-    }
-  }
-}
+  ],
+  position: {
+    start: {
+      line: 1,
+      column: 1,
+      offset: 0,
+    },
+    end: {
+      line: 1,
+      column: 36,
+      offset: 35,
+    },
+  },
+};
 ```
 
 但是渲染结果为：
 
 ```html
-<p>there is a <strong>side note</strong> </p>
+<p>
+  there is a
+  <strong>side note</strong>
+</p>
 <aside class="sidenote"><span class="sidenote-number-override">14</span></aside>
 👉 fff
 <p></p>
@@ -259,7 +264,7 @@ const hast = {
 
 具体的还要结合remark-directive的语法，有块级元素，也有内联元素，在设计实现组件的时候需要考虑组件的使用场景、需要支持的功能。
 
-### 2. OpenGraph Protocol
+## 2. OpenGraph Protocol
 
 ::slink{url="https://ogp.me/"}
 
@@ -267,7 +272,7 @@ const hast = {
 
 插件使用上也遇到一点问题，以B站的链接为例，我直接拷贝了header但是总会拿到验证码页面数据，但直接fetch没有问题，插件支持`html`字段直接用fetch的返回结果，有空再定位问题原因。
 
-### 3. Astro
+## 3. Astro
 
 最终用到的：
 
@@ -279,3 +284,11 @@ const hast = {
 6. View Transitions
 
 跟直接用Nextjs感觉没差，只是Astro上手要简单点，然后相对轻量。
+
+### deploy（Github Pages）
+
+::slink{url="https://docs.astro.build/en/guides/deploy/github/"}
+
+然后就是关于base路径的配置，按照[文档所述](https://docs.astro.build/en/guides/deploy/github/#base)，按理应该处理所有 `<a>` `<img>` 等的路径，但是只替换了 js&css的路径。
+
+索性手动替换了，后续有空看看什么原因。

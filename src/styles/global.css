@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Source Han Serif';
-  src: url('/fonts/siyuan/SourceHanSerifSC-Regular.otf');
+  src: url('/blog/fonts/siyuan/SourceHanSerifSC-Regular.otf');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Huiwen-mincho Regular';
-  src: url('/fonts/Huiwen-mincho-Regular/Huiwen-mincho-Regular.otf');
+  src: url('/blog/fonts/Huiwen-mincho-Regular/Huiwen-mincho-Regular.otf');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
