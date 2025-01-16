@@ -1,0 +1,51 @@
+#reader {
+  .sidenote p,
+  .sidenote div,
+  .sidenote code,
+  .sidenote li {
+    display: inline;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .marginnote p,
+  .marginnote div,
+  .marginnote code,
+  .marginnote li {
+    display: inline;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .sidenote-number-override,
+  .sidenote-label-override {
+    position: relative;
+    vertical-align: baseline;
+    font-size: 0.8rem;
+    top: -0.5rem;
+  }
+
+  .sidenote-label-override {
+    margin-left: 0.5rem;
+  }
+  .sidenote-number-override {
+    margin-right: 0.5rem;
+  }
+
+  div.highlight-block > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  div.highlight-block > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .hb-tip {
+    background-color: #424140;
+  }
+
+  a.link-previewer {
+    text-decoration: none;
+  }
+}

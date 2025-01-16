@@ -1,0 +1,11 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { HomePage } from '@/components/Pages/Home/HomePage';
+
+const posts = await getCollection('posts');
+---
+
+<Layout>
+  <HomePage posts={posts} client:load />
+</Layout>

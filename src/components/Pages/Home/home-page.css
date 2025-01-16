@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.post-list-item {
+  animation: expand 0.2s ease-out forwards;
+  animation-fill-mode: forwards;
+  @apply table p-2 pr-8 space-x-4 max-w-[100%] border-t truncate;
+  @apply backdrop-invert backdrop-brightness-0 backdrop-saturate-0;
+  @apply hover:backdrop-saturate-100 hover:backdrop-opacity-100 hover:backdrop-invert-0;
+}
+
+@keyframes expand {
+  from {
+    @apply backdrop-brightness-0 backdrop-saturate-0;
+  }
+  to {
+    @apply backdrop-brightness-100 backdrop-saturate-50;
+  }
+}

@@ -1,0 +1,36 @@
+---
+import { getRandomHue } from '@/utils';
+import ClientRouter from 'astro/components/ClientRouter.astro';
+
+import '@/styles/global.css';
+
+const pictureFrameBgColor = `hsl(${getRandomHue()},54%,56%)`;
+const maskBgColor1 = `hsl(${getRandomHue({ min: 0, max: 180 })},69%,22%,.39)`;
+const maskBgColor2 = `hsl(${getRandomHue({ min: 0, max: 360 })},69%,42%,.45)`;
+const maskBgColor3 = `hsl(${getRandomHue({ min: 180, max: 360 })},69%,60%,.75)`;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>Voosil‘s Blog</title>
+    <ClientRouter />
+  </head>
+  <body
+    class='selection:bg-[var(--pictureFrameBgColor)] selection:text-[white]'
+  >
+    <slot />
+  </body><style
+    define:vars={{
+      pictureFrameBgColor,
+      maskBgColor1,
+      maskBgColor2,
+      maskBgColor3,
+    }}
+    is:global
+  ></style>
+</html>

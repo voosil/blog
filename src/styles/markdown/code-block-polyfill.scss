@@ -1,0 +1,9 @@
+#reader {
+  // 添加行号
+  span[data-line-number]::before {
+    content: attr(data-line-number);
+    display: inline-block;
+    padding-right: 1rem;
+    color: #56524e;
+  }
+}

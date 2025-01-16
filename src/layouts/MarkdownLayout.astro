@@ -1,0 +1,81 @@
+---
+import { format } from 'date-fns';
+import Layout from '@/layouts/Layout.astro';
+import { MarkdownMenu } from '@/components/Pages/Reader/MarkdownMenu';
+import { AutoSizeTitle } from '@/components/UI/AutoSizeTitle';
+import { MarkdownReader } from '@/components/Pages/Reader/MarkdownReader';
+import { cn } from '@repo/utils/lib';
+
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+const post = Astro.props.post as CollectionEntry<'posts'>;
+const { data } = post;
+
+const { headings } = await render(post);
+---
+
+<Layout>
+  <div class='w-full px-[2rem] flex relative text-zinc-900 box-border'>
+    <aside class='basis-[25%]'>
+      <div
+        class={cn(
+          'fixed py-16 flex flex-col  h-screen max-w-[calc(30%-8rem)]',
+          data.banner ? 'justify-center' : 'justify-between',
+        )}
+      >
+        {
+          !data.banner && (
+            <header class='mt-0 space-y-2'>
+              <div class='text-[1rem]'>
+                {format(data.date, 'eeee MM-dd hh:mm, yyyy')}
+              </div>
+              <AutoSizeTitle
+                title={data?.title ?? ''}
+                className='font-bold px-4 py-1 bg-zinc-900 text-zinc-100'
+              />
+            </header>
+          )
+        }
+        <nav class='text-[1.2rem] font-light max-h-[50vh] overflow-y-auto'>
+          <MarkdownMenu headings={headings} />
+        </nav>
+      </div>
+    </aside>
+
+    <main
+      class={cn(
+        'basis-[55%] min-w-64 p-16 bg-[#fffbf3] shadow-md',
+        data.banner ? 'mt-16' : 'mt-32',
+      )}
+    >
+      {
+        data.banner && (
+          <header class='relative'>
+            <img src={data.banner} alt='banner' class='w-full relative' />
+            <div class='mt-0 space-y-2 absolute top-1/2'>
+              <div class='text-[1rem] text-white float-right'>
+                {format(data.date, 'eeee MM-dd hh:mm, yyyy')}
+              </div>
+              <AutoSizeTitle
+                title={data?.title ?? ''}
+                max={3.5}
+                className='font-bold px-4 py-1 bg-zinc-900 text-zinc-100'
+              />
+            </div>
+          </header>
+        )
+      }
+      <MarkdownReader post={post} />
+    </main>
+
+    <nav>
+      <a href='/' class='flex items-center fixed right-16 mt-16'>
+        Back to Home
+        <img src='/icons/r-arrow.svg' class='w-4 inline-block' />
+      </a>
+    </nav>
+  </div>
+</Layout>
+
+<style></style>
