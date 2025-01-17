@@ -68,13 +68,9 @@ const config: UserConfig = {
             description: 'A bug fix',
             title: 'Bug Fixes',
           },
-          '🚨 test': {
-            description: 'Adding missing tests or correcting existing tests',
-            title: 'Tests',
-          },
-          '⏪️ revert': {
-            description: 'Reverts a previous commit',
-            title: 'Reverts',
+          '🚧 wip': {
+            description: 'Work in progress, reset head to continue',
+            title: 'Wip',
           },
           '🚀 perf': {
             description: 'A code change that improves performance',
@@ -89,32 +85,19 @@ const config: UserConfig = {
               'Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)',
             title: 'Styles',
           },
+          '🔧 chore': {
+            description: "Other changes that don't modify src or test files",
+            title: 'Chores',
+          },
           '🎨 refactor': {
             description:
               'A code change that neither fixes a bug nor adds a feature',
             title: 'Code Refactoring',
           },
-          '👷 build': {
-            description:
-              'Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)',
-            title: 'Builds',
-          },
-          '🤖 ci': {
+          '🤖 ci/cd': {
             description:
               'Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)',
             title: 'Continuous Integrations',
-          },
-          '🔮 standardization': {
-            description: 'Changes for standardization, like eslint, commitlint',
-            title: 'Standardization',
-          },
-          '🔧 chore': {
-            description: "Other changes that don't modify src or test files",
-            title: 'Chores',
-          },
-          '🚧 wip': {
-            description: 'Work in progress, reset head to continue',
-            title: 'Wip',
           },
         },
       },
@@ -122,6 +105,9 @@ const config: UserConfig = {
         description:
           'What is the scope of this change (e.g. name of project or library)',
         enum: {
+          '🔮UI': {
+            description: '主要修改样式',
+          },
           '👌simple': {
             description: 'Simple fix or feature for a non-critical issue.',
           },
@@ -131,20 +117,11 @@ const config: UserConfig = {
           '🧑‍💻✨refine': {
             description: '代码优化',
           },
-          '🚧wip': {
-            description: 'Work in progress.',
-          },
-          '🎨refactor': {
-            description: '代码重构',
-          },
           '🧩components/ui': {
             description: '组件变更',
           },
           '🎉birth': {
             description: 'Begin a project.',
-          },
-          '💥breaking-changes': {
-            description: 'Introduce breaking changes.',
           },
           '🔖release': {
             description: 'Release version.',

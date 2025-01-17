@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /* Tufte CSS styles Based */
-
 html,
 body {
   font-family:
@@ -9,8 +8,10 @@ body {
     'Source Han Serif',
     Microsoft YaHei,
     sans-serif;
-  background-color: #ededec;
+  background-color: #fffff8;
   color: #222;
+  background: url('https://images.unsplash.com/photo-1617684537129-f43610f67753?q=80&w=3269&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+    center center / cover no-repeat fixed;
 }
 
 #reader {
@@ -78,7 +79,7 @@ body {
   hr {
     display: block;
     height: 1px;
-    width: 55%;
+    width: 65%;
     border: 0;
     border-top: 1px solid #ccc;
     margin: 1em 0;
@@ -115,6 +116,7 @@ body {
   dl,
   ol,
   ul {
+    width: 65%;
     font-size: 1.2rem;
     line-height: 2.5rem;
   }
@@ -160,6 +162,7 @@ body {
   /* end chapter epigraphs styles */
 
   blockquote {
+    width: 65%;
     margin: 2rem 0;
     position: relative;
     font-size: 1.4rem;
@@ -192,7 +195,7 @@ body {
   }
 
   blockquote footer {
-    width: 55%;
+    width: 65%;
     font-size: 1.1rem;
     text-align: right;
   }
@@ -200,7 +203,7 @@ body {
   section > p,
   section > footer,
   section > table {
-    width: 55%;
+    width: 65%;
   }
 
   /* 50 + 5 == 55, to be the same width as paragraph */
@@ -222,7 +225,7 @@ body {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    max-width: 55%;
+    max-width: 65%;
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     margin: 0 0 3em 0;
@@ -264,10 +267,9 @@ body {
   .marginnote {
     float: right;
     clear: right;
-    // margin-right: -60%;
-    // width: 50%;
-    width: 300px;
-    right: -400px;
+    margin-right: -45%;
+    padding-left: 1rem;
+    width: 40%;
     margin-top: 0.3rem;
     margin-bottom: 0;
     font-size: 1.1rem;
@@ -330,6 +332,7 @@ body {
   }
 
   pre {
+    width: 65%;
     padding: 1rem;
     background-color: #151515;
   }
@@ -362,7 +365,7 @@ body {
 
   pre > code {
     font-size: 0.9rem;
-    width: 100%;
+    width: 97.5%;
     margin-left: 2.5%;
     overflow-x: auto;
     display: block;

@@ -43,7 +43,7 @@ export function HighlightBlock({
   return (
     <div
       className={cn(
-        'bg-[#cb525a] px-8 py-6 border-4 border-zinc-100 border-double border-spacing-4 my-4 text-zinc-100 shadow-md rounded-md highlight-block',
+        'bg-[#cb525a] px-8 py-6 border-4 border-zinc-100 border-double border-spacing-4 my-4 text-zinc-100 shadow-md rounded-md highlight-block --content-w',
         className,
       )}
       {...props}

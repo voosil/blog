@@ -1,0 +1,22 @@
+#reader {
+  .--content-w {
+    width: 65%;
+  }
+
+  .hb-tip {
+    background-color: #424140;
+  }
+
+  a.link-previewer {
+    text-decoration: none;
+  }
+
+  div.highlight-block > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  div.highlight-block > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}

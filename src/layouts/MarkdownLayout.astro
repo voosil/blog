@@ -16,8 +16,8 @@ const { headings } = await render(post);
 ---
 
 <Layout>
-  <div class='w-full px-[2rem] flex relative text-zinc-900 box-border'>
-    <aside class='basis-[25%]'>
+  <div class='w-full flex relative text-zinc-900 box-border'>
+    <!-- <aside class='basis-[25%]'>
       <div
         class={cn(
           'fixed py-16 flex flex-col  h-screen max-w-[calc(30%-8rem)]',
@@ -41,19 +41,14 @@ const { headings } = await render(post);
           <MarkdownMenu headings={headings} />
         </nav>
       </div>
-    </aside>
+    </aside> -->
 
-    <main
-      class={cn(
-        'basis-[55%] min-w-64 p-16 bg-[#fffbf3] shadow-md',
-        data.banner ? 'mt-16' : 'mt-32',
-      )}
-    >
+    <main class={cn('ml-[8%] min-w-64 pb-64', data.banner ? 'mt-16' : 'mt-32')}>
       {
-        data.banner && (
+        data.banner ? (
           <header class='relative'>
             <img src={url(data.banner)} alt='banner' class='w-full relative' />
-            <div class='mt-0 space-y-2 absolute top-1/2'>
+            <div class='mt-0 space-y-2 absolute top-1/2 max-w-[65%]'>
               <div class='text-[1rem] text-white float-right'>
                 {format(data.date, 'eeee MM-dd hh:mm, yyyy')}
               </div>
@@ -64,18 +59,34 @@ const { headings } = await render(post);
               />
             </div>
           </header>
+        ) : (
+          <header>
+            <div class='mt-0 space-y-2 max-w-[65%] text-white'>
+              <div class='text-[1rem]'>
+                {format(data.date, 'eeee MM-dd hh:mm, yyyy')}
+              </div>
+              <AutoSizeTitle
+                title={data?.title ?? ''}
+                max={3.7}
+                className='font-bold'
+              />
+            </div>
+          </header>
         )
       }
+
       <MarkdownReader post={post} />
     </main>
-
-    <nav>
-      <a href={url('/')} class='flex items-center fixed right-16 mt-16'>
-        Back to Home
-        <img src={url('/icons/r-arrow.svg')} class='w-4 inline-block' />
-      </a>
-    </nav>
   </div>
+  <nav>
+    <a
+      href={url('/')}
+      class='flex items-center fixed top-16 right-16 text-[var(--maskBgColor3)]'
+    >
+      Back to Home
+      <img src={url('/icons/r-arrow.svg')} class='w-4 inline-block' />
+    </a>
+  </nav>
 </Layout>
 
 <style></style>

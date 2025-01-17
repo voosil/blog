@@ -84,7 +84,7 @@ export function LinkPreviewer({ data: $ }: LinkPreviewerProps) {
     <a
       href={$.url}
       target='_blank'
-      className='link-previewer bg-[#e0e5cb] flex gap-2 p-4 my-8 rounded-md shadow-md space-x-1 hover:shadow-lg hover:bg-[var(--maskBgColor1)] transition-all ease-in'
+      className='link-previewer --content-w bg-[#e0e5cb] flex gap-2 p-4 my-8 rounded-md shadow-md space-x-1 hover:shadow-lg hover:bg-[var(--maskBgColor1)] transition-all ease-in'
     >
       {$.imageUrl && (
         <img

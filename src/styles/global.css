@@ -13,7 +13,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 html,
 body {
   margin: 0;
@@ -27,20 +26,20 @@ body {
   scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 2px;
   height: 4px;
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: var(--pictureFrameBgColor);
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background: var(--maskBgColor1);
   border-radius: 10px;
 }
 
-body::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
