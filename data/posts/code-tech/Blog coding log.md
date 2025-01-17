@@ -295,6 +295,9 @@ const hast = {
 
 ### 4. Font Subset
 
+（还没做）
+中文字体太大了，通过 unicode-range + 三方工具将字体集拆分为多个子集，按需使用。
+
   1. <https://github.com/qincore/font-subset>
   2. <https://the-sustainable.dev/a-guide-to-subsetting-fonts/>
   3. <https://tie.pub/blog/font-subset/>
