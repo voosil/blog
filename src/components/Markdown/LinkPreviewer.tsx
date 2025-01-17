@@ -1,5 +1,3 @@
-'use client';
-
 import ogs from 'open-graph-scraper';
 
 import type { OgObject } from 'open-graph-scraper/types';

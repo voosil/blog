@@ -283,7 +283,7 @@ const hast = {
 5. Performance Optimize（Code Spliting / Island）
 6. View Transitions
 
-跟直接用Nextjs感觉没差，只是Astro上手要简单点，然后相对轻量。
+跟直接用Nextjs感觉没差，只是Astro上手要简单点（Markdonw Loader 和 Plugin 配置简单），然后相对轻量。
 
 ### deploy（Github Pages）
 
@@ -292,3 +292,9 @@ const hast = {
 然后就是关于base路径的配置，按照[文档所述](https://docs.astro.build/en/guides/deploy/github/#base)，按理应该处理所有 `<a>` `<img>` 等的路径，但是只替换了 js&css的路径。
 
 索性手动替换了，后续有空看看什么原因。
+
+### 4. Font Subset
+
+  1. <https://github.com/qincore/font-subset>
+  2. <https://the-sustainable.dev/a-guide-to-subsetting-fonts/>
+  3. <https://tie.pub/blog/font-subset/>
