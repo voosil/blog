@@ -5,6 +5,7 @@ import { MarkdownMenu } from '@/components/Pages/Reader/MarkdownMenu';
 import { AutoSizeTitle } from '@/components/UI/AutoSizeTitle';
 import { MarkdownReader } from '@/components/Pages/Reader/MarkdownReader';
 import { cn, url } from '@/utils';
+import { ReaderSideBar } from '@/components/Pages/Reader/ReaderSider/ReaderSideBar';
 
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -17,32 +18,6 @@ const { headings } = await render(post);
 
 <Layout>
   <div class='w-full flex relative text-zinc-900 box-border'>
-    <!-- <aside class='basis-[25%]'>
-      <div
-        class={cn(
-          'fixed py-16 flex flex-col  h-screen max-w-[calc(30%-8rem)]',
-          data.banner ? 'justify-center' : 'justify-between',
-        )}
-      >
-        {
-          !data.banner && (
-            <header class='mt-0 space-y-2'>
-              <div class='text-[1rem]'>
-                {format(data.date, 'eeee MM-dd hh:mm, yyyy')}
-              </div>
-              <AutoSizeTitle
-                title={data?.title ?? ''}
-                className='font-bold px-4 py-1 bg-zinc-900 text-zinc-100'
-              />
-            </header>
-          )
-        }
-        <nav class='text-[1.2rem] font-light max-h-[50vh] overflow-y-auto'>
-          <MarkdownMenu headings={headings} />
-        </nav>
-      </div>
-    </aside> -->
-
     <main class={cn('ml-[8%] min-w-64 pb-64', data.banner ? 'mt-16' : 'mt-32')}>
       {
         data.banner ? (
@@ -81,12 +56,13 @@ const { headings } = await render(post);
   <nav>
     <a
       href={url('/')}
-      class='flex items-center fixed top-16 right-16 text-[var(--maskBgColor3)]'
+      class='flex items-center fixed top-16 right-16 text-zinc-100'
     >
       Back to Home
       <img src={url('/icons/r-arrow.svg')} class='w-4 inline-block' />
     </a>
   </nav>
+  <ReaderSideBar headings={headings} client:load />
 </Layout>
 
 <style></style>

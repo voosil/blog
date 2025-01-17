@@ -40,7 +40,7 @@ export function MarkdownMenu({ headings }: { headings: MetadataHeading[] }) {
                 key={index}
                 href={`#${heading.slug}`}
                 className={cn(
-                  'text-lg hover:text-zinc-500 dark:text py-1',
+                  'text-lg hover:text-zinc-800 dark:text py-1 transition-colors ease-linear',
                   !relativeDepth && 'font-bold',
                 )}
                 style={{ paddingLeft: `${relativeDepth * 16}px` }}
