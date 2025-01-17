@@ -301,3 +301,27 @@ const hast = {
   1. <https://github.com/qincore/font-subset>
   2. <https://the-sustainable.dev/a-guide-to-subsetting-fonts/>
   3. <https://tie.pub/blog/font-subset/>
+
+# "Unexpected"
+
+## 随机颜色
+
+我本来打算在首页做个滤镜+随机渐变色的效果，预期每次刷新页面会有不同的色彩表现，等到部署完成后，发现刷新没有更新颜色才反应过来是SSR。还是有比较强的客户端渲染的惯性思维，而且在本地开发的时候每次保存都会刷新页面，产生不同的色彩效果，让这种思维惯性更强了。
+不过刚好创造一个我觉得更有价值的效果：每次应用更新（功能/内容）会有不同的色彩表现——这个表现可以传达应用以及内容更新了信息，不需要手动做任何额外的UI变更，而且，比起每次刷新就变更色彩，有时间跨度的改变更有惊喜感。
+
+# TODO
+
+## Feature
+
+- [ ] 1. ALL Posts & 每个Nav下的所有Posts
+- [ ] 2. 专栏相关功能
+- [ ] 3. Label/Tags
+- [ ] 4. 支持夜晚模式
+- [ ] 5. 设计、更换favicon
+- [ ] 6. 添加og-meta
+
+## Optimize
+
+- [ ] 1. font-subset
+- [ ] 2. 图片优化
+- [ ] 3. Better Responsive Design
