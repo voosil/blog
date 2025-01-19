@@ -105,8 +105,11 @@ const config: UserConfig = {
         description:
           'What is the scope of this change (e.g. name of project or library)',
         enum: {
-          '🔮UI': {
+          '🔮style': {
             description: '主要修改样式',
+          },
+          '📝docs': {
+            description: 'Documentation only changes',
           },
           '👌simple': {
             description: 'Simple fix or feature for a non-critical issue.',

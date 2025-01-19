@@ -28,6 +28,10 @@ export function MarkdownMenu({ headings }: { headings: MetadataHeading[] }) {
   const headingGroups = getHeadingGroups(headings);
   const minDepth = Math.min(...headings.map((heading) => heading.depth));
 
+  if (!headings.length) {
+    return <>No Headings</>;
+  }
+
   return (
     <div className='flex flex-col gap-2'>
       {headingGroups.map((group, index) => (
