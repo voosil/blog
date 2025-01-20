@@ -1,11 +1,22 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+
+import Layout from '@/layouts/Layout.astro';
 import { HomePage } from '@/components/Pages/Home/HomePage';
+
+import coverImage from '../../public/images/tuya.jpg';
 
 const posts = await getCollection('posts');
 ---
 
 <Layout>
-  <HomePage posts={posts} client:load />
+  <HomePage posts={posts} client:load>
+    <Image
+      class='fixed w-[90%] h-[90%] rounded-2xl shadow-xl'
+      src={coverImage}
+      alt=''
+      inferSize
+    />
+  </HomePage>
 </Layout>

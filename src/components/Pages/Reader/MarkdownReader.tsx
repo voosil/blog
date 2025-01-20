@@ -60,8 +60,8 @@ export function MarkdownReader({ post }: { post: CollectionEntry<'posts'> }) {
   const res = markdownProcessor(post.body ?? '');
 
   return (
-    <article id='reader' className='mt-16 relative '>
-      <div className='absolute h-full bg-[#f5f4f0] w-[calc(65%+2rem)] bg-opacity-95 backdrop-blur-md'></div>
+    <article id='reader' className='mt-16 relative'>
+      <div className='absolute h-full bg-[#f5f4f0] w-full bg-opacity-95 backdrop-blur-md'></div>
       <div className='relative p-8 pb-32'>
         {res?.result ?? 'Sorry, something wrong...'}
       </div>

@@ -27,7 +27,7 @@ export function ReaderSideBar({ headings }: ReaderSideBarProps) {
               </TooltipTrigger>
               <TooltipContent
                 side='top'
-                className='font-mono border-none bg-[#cb525a] rounded-none text-zinc-100 mb-2'
+                className='border-none bg-[#cb525a] rounded-none text-zinc-100 mb-2'
               >
                 专栏
               </TooltipContent>

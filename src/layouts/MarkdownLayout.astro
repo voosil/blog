@@ -17,7 +17,12 @@ const { headings } = await render(post);
 
 <Layout>
   <div class='w-full flex relative text-zinc-900 box-border'>
-    <main class={cn('ml-[8%] min-w-64 pb-64', data.banner ? 'mt-16' : 'mt-32')}>
+    <main
+      class={cn(
+        'ml-[8%] min-w-[55vw] pb-64 max-w-[65vw]',
+        data.banner ? 'mt-16' : 'mt-32',
+      )}
+    >
       {
         data.banner ? (
           <header class='relative'>

@@ -14,6 +14,7 @@ type PostsCollection = CollectionEntry<'posts'>[];
 
 export interface HomePageProps {
   posts: PostsCollection;
+  children?: React.ReactNode;
 }
 
 function getLatestPost(posts: CollectionEntry<'posts'>[], len: number) {
@@ -25,7 +26,7 @@ function getLatestPost(posts: CollectionEntry<'posts'>[], len: number) {
     .slice(0, len);
 }
 
-export function HomePage({ posts }: HomePageProps) {
+export function HomePage({ posts, children }: HomePageProps) {
   const [targetPosts, setTargetPosts] = useState<PostsCollection | null>(null);
   const randomHue = getRandomHue({ max: 180 });
   const latestPosts = getLatestPost(posts, 3);
@@ -44,10 +45,7 @@ export function HomePage({ posts }: HomePageProps) {
   return (
     <>
       <div className='w-full h-full flex justify-center items-center'>
-        <img
-          className='fixed w-[90%] h-[90%] rounded-2xl shadow-xl'
-          src={url('/images/tuya.png')}
-        />
+        {children}
       </div>
       <div className='w-full h-full relative z-99 p-[5%] bg-gradient-to-br from-[var(--maskBgColor1)] from-0% via-[var(--maskBgColor2)] via-50% to-[var(--maskBgColor3)] to-100%'>
         <div className='flex h-full'>
