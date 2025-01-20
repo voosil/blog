@@ -13,18 +13,14 @@ date: '2025-01-13 21:01'
 #### Highlight Block
 
 ```markdown
-:::hb
-This is a highlight block
-:::
+::hb[This is a highlight block]
 
 :::hb{.hb-tip}
 This is a highlight block
 :::
 ```
 
-:::hb
-This is a highlight block
-:::
+::hb[This is a highlight block]
 
 :::hb{.hb-tip}
 This is a tip block
