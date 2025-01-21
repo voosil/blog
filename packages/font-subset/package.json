@@ -1,0 +1,17 @@
+{
+  "name": "@repo/font-subset",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [],
+  "author": "Voosil",
+  "devDependencies": {
+    "@zeir/font-subset": "^1.1.1",
+    "cheerio": "^1.0.0",
+    "glob": "^10.3.12"
+  },
+  "dependencies": {
+    "fonteditor-core": "^2.4.1"
+  }
+}
