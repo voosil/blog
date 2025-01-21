@@ -42,3 +42,23 @@ const isDev = import.meta.env.MODE === 'development';
 ### insert css into index.html
 
 第一次尝试是先编译然后再执行脚本将样式插入index.html（我以为是类似React的index.html）。Astro 默认采用的是 SSG 模式，index.html 只是主页入口，post页面在post文件夹下。
+
+## 优化&fix
+
+1. 兼容 woff
+2. 兼容 otf
+3. 继续拆分字体文件：根据字符集范围拆分，比如0-255拆分为0-127和128-255，这样生成的字体文件可以更小。
+4. 缓存更新：目前生成的字体文件名称一样，没有hash，都会命中缓存。
+根据Unicode算hash：
+
+```ts
+const hash = crypto
+  .createHash('md5')
+  // 排序保证位置变化不影响结果
+  .update(unicodeRange.sort((a, b) => a - b).join(''))
+  .digest('hex')
+  .slice(0, 8);
+const fontSubsetName = `${fontName}-subset_${hash}`;
+```
+
+这样，字符集变化可以拉取新字体文件，如果没有变化就直接使用缓存。

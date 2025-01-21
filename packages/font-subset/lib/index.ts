@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 
 import { minifyFont } from './utils/slice-font';
 import { updateCSS } from './utils/update-css';
@@ -71,7 +72,13 @@ export async function generateSubsetFont({
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const fontName = fontFile.split('/').pop()!.split('.')[0]!;
-  const fontSubsetName = fontName + '-subset';
+  const hash = crypto
+    .createHash('md5')
+    // 排序保证位置变化不影响结果
+    .update(unicodeRange.sort((a, b) => a - b).join(''))
+    .digest('hex')
+    .slice(0, 8);
+  const fontSubsetName = `${fontName}-subset_${hash}`;
   const fontFamily = fontSubsetName + '.woff2';
   fs.writeFileSync(path.resolve(output.font, fontFamily), fontBufferMinified);
 
