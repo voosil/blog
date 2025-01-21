@@ -17,7 +17,7 @@ export interface ReaderSideBarProps
 export function ReaderSideBar({ headings }: ReaderSideBarProps) {
   return (
     <div className='fixed w-[35%] top-1/2 -translate-y-1/2 -right-[calc(35%-2rem)] hover:right-0 transition-all duration-700 ease-in-out'>
-      <div className='flex justify-between'>
+      <div className='flex justify-between font-sans'>
         <img src={url('/icons/menu.svg')} className='w-8' />
         <div className='mr-4'>
           <TooltipProvider>
