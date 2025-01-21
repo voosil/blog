@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# font subset generated
+public/styles/font-prod.css
+*-subset.woff2

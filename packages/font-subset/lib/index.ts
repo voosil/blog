@@ -4,6 +4,8 @@ import path from 'path';
 import { minifyFont } from './utils/slice-font';
 import { updateCSS } from './utils/update-css';
 
+import type { FontSubsetOptions } from './types';
+
 const __dirname = path.resolve();
 
 /**
@@ -25,17 +27,6 @@ function getAllFiles(dirPath: string, arrayOfFiles: string[] = []) {
   });
 
   return arrayOfFiles;
-}
-
-export interface FontSubsetOptions {
-  /** build output path 用于作为其他文件的base dir*/
-  distRoot: string;
-  /** 需要子集化的文件夹路径 */
-  targetFolder: string;
-  /** 需要子集化的字体文件 */
-  fontFile: string;
-  /** output folder */
-  output: string;
 }
 
 /**
@@ -62,30 +53,29 @@ function getUnicodeRange(dirPath: string) {
 }
 
 export async function generateSubsetFont({
-  distRoot,
+  publicDir,
   targetFolder,
   fontFile,
   output,
 }: FontSubsetOptions) {
-  const unicodeRange = getUnicodeRange(
-    path.resolve(__dirname, distRoot, targetFolder),
-  );
+  const unicodeRange = getUnicodeRange(path.resolve(__dirname, targetFolder));
   console.log('font slicing...');
 
   const fontBufferMinified = await minifyFont(
-    path.resolve(__dirname, distRoot, fontFile),
+    path.resolve(__dirname, fontFile),
     unicodeRange,
+    'woff2',
   );
 
   console.log('font sliced');
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const fontName = fontFile.split('/').pop()!.split('.')[0];
+  const fontName = fontFile.split('/').pop()!.split('.')[0]!;
   const fontSubsetName = fontName + '-subset';
   const fontFamily = fontSubsetName + '.woff2';
-  fs.writeFileSync(path.resolve(output, fontFamily), fontBufferMinified);
+  fs.writeFileSync(path.resolve(output.font, fontFamily), fontBufferMinified);
 
-  updateCSS(distRoot, output, fontName, fontFamily, unicodeRange);
+  updateCSS(publicDir, output, fontName, fontFamily, unicodeRange);
 
   console.log('font subset pipeline done');
 }

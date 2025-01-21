@@ -7,9 +7,7 @@
   "keywords": [],
   "author": "Voosil",
   "devDependencies": {
-    "@zeir/font-subset": "^1.1.1",
-    "cheerio": "^1.0.0",
-    "glob": "^10.3.12"
+    "@types/node": "^22.10.7"
   },
   "dependencies": {
     "fonteditor-core": "^2.4.1"

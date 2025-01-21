@@ -184,15 +184,9 @@ importers:
         specifier: ^2.4.1
         version: 2.4.1
     devDependencies:
-      '@zeir/font-subset':
-        specifier: ^1.1.1
-        version: 1.1.1
-      cheerio:
-        specifier: ^1.0.0
-        version: 1.0.0
-      glob:
-        specifier: ^10.3.12
-        version: 10.4.5
+      '@types/node':
+        specifier: ^22.10.7
+        version: 22.10.7
 
   packages/typescript-config: {}
 
@@ -1351,9 +1345,6 @@ packages:
     resolution: {integrity: sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw==}
     engines: {node: '>=10.0.0'}
 
-  '@zeir/font-subset@1.1.1':
-    resolution: {integrity: sha512-58jeLdA56xb7+iFghIZN0f62HZcd5TvskJa24idHCjTCYDP642X+zU2GjWlPRH1Pc5zUGiezeoDdQwnKFXHfXQ==}
-
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -2313,10 +2304,6 @@ packages:
 
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
-
-  fs-extra@10.1.0:
-    resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
-    engines: {node: '>=12'}
 
   fs-extra@9.1.0:
     resolution: {integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==}
@@ -5633,13 +5620,6 @@ snapshots:
 
   '@xmldom/xmldom@0.8.10': {}
 
-  '@zeir/font-subset@1.1.1':
-    dependencies:
-      chalk: 5.4.1
-      fonteditor-core: 2.4.1
-      fs-extra: 10.1.0
-      tslib: 2.8.1
-
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
       acorn: 8.14.0
@@ -6906,12 +6886,6 @@ snapshots:
       signal-exit: 4.1.0
 
   fraction.js@4.3.7: {}
-
-  fs-extra@10.1.0:
-    dependencies:
-      graceful-fs: 4.2.11
-      jsonfile: 6.1.0
-      universalify: 2.0.1
 
   fs-extra@9.1.0:
     dependencies:

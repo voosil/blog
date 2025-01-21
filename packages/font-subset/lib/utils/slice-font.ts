@@ -5,6 +5,7 @@ import { Font, FontEditor, woff2 } from 'fonteditor-core';
 export async function minifyFont(
   fontFile: string,
   range: number[],
+  outputFontType: FontEditor.FontType,
 ): Promise<NodeJS.ArrayBufferView> {
   await woff2.init('../../../node_modules/fonteditor-core/woff2/woff2.wasm');
 
@@ -17,7 +18,7 @@ export async function minifyFont(
     combinePath: false,
   });
   const fontBufferMinified = font.write({
-    type: 'woff2',
+    type: outputFontType,
   });
 
   return fontBufferMinified as NodeJS.ArrayBufferView;

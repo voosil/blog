@@ -4,6 +4,9 @@ import ClientRouter from 'astro/components/ClientRouter.astro';
 
 import '@/styles/global.css';
 
+// eslint-disable-next-line turbo/no-undeclared-env-vars
+const isDev = import.meta.env.MODE === 'development';
+
 const pictureFrameBgColor = `hsl(${getRandomHue()},54%,56%)`;
 const maskBgColor1 = `hsl(${getRandomHue({ min: 0, max: 180 })},69%,22%,.39)`;
 const maskBgColor2 = `hsl(${getRandomHue({ min: 0, max: 360 })},69%,42%,.45)`;
@@ -19,6 +22,10 @@ const maskBgColor3 = `hsl(${getRandomHue({ min: 180, max: 360 })},69%,60%,.75)`;
     <meta name='generator' content={Astro.generator} />
     <title>Voosil‘s Blog</title>
     <ClientRouter />
+    <link
+      rel='stylesheet'
+      href={isDev ? url('/styles/font-dev.css') : url('/styles/font-prod.css')}
+    />
   </head>
   <body
     class='selection:bg-[var(--pictureFrameBgColor)] selection:text-[white]'
