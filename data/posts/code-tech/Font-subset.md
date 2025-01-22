@@ -8,6 +8,8 @@ date: "2025-01-21 16:58"
 2. 根据字符集，生成字体文件和对应css；
 3. 实现dev & production 无感知切换;
 
+::hb[<https://github.com/voosil/blog/tree/main/packages/font-subset>]
+
 ### 1. 获取所有需要子集化的字符
 
 由于我只需要将post渲染为本地字体，所以遍历data/posts获取所有文件路径并读取即可。递归遍历或者使用三方库（glob）都行。然后获取Unicode编码。
